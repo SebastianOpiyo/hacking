@@ -1,0 +1,17 @@
+# WINDOWS DOMAIN CONTROLLER.
+ 
+ --> Windows domain controller is a server that responds to security authentication
+     requests within a Windows Server Domain.
+ --> It is a Server on MS Windows/Windows NT network that is responsible for allowing     users access the domain resourses. 
+ --> A domain controller is the centerpiece of Windows Active Directory Service, 
+     It authenticates users, stores user account info and enforces security policy
+     for a windows policy. 
+ --> Attacks that can be performed in the Domain Controller include:
+	1. NTLM Relay Vulnerability
+	2. LDAP 
+
+# 3RD PARTY LIBRARIES FOR PYTHON
+  --> Can be found on the link below:
+      # http://pypi.python.org/pypi/
+  
+  -->   
