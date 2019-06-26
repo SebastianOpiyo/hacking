@@ -125,6 +125,15 @@ while True:
 import socket
 
 
+def main():
+    # had problems with the variables not defined, 
+    # that is why I have this function here.
+    ip1 = '192.168.95.148'
+    ip2 = '192.168.95.149'
+    ip3 = '192.168.95.150'
+    port = 21
+
+
 def retBanner(ip, port):
     try:
         socket.setdefaulttimeout(2)
@@ -138,39 +147,32 @@ def retBanner(ip, port):
 
 def checkVulns(banner):
     if 'FreeFloat Ftp Server (Version 1.00)' in banner:
-        print '[+] FreeFloat FTP Server is vulnerable.'
+        print ('[+] FreeFloat FTP Server is vulnerable.')
     elif '3Com 3CDaemon FTP Server Version 2.0' in banner:
-        print '[+] 3CDaemon FTP Server is vulnerable.'
+        print ('[+] 3CDaemon FTP Server is vulnerable.')
     elif 'Ability Server 2.34' in banner:
-        print '[+] Ability FTP Server is vulnerable.'
+        print ('[+] Ability FTP Server is vulnerable.')
     elif 'Sami FTP Server 2.0.2' in banner:
-        print '[+] Sami FTP Server is vulnerable.'
+        print ('[+] Sami FTP Server is vulnerable.')
     else:
-        print '[-] FTP Server is not vulnerable.'
+        print ('[-] FTP Server is not vulnerable.')
     return
 
-
+port=21
 banner1 = retBanner(ip1, port)
 if banner1:
-    print('[+]' + ip1 + ': ' + banner1)
+    print('[+]' + ip1 + ': ' + banner1.strip('\n'))
     checkVulns(banner1)
 
 banner2 = retBanner(ip2, port)
 if banner2:
-    print('[+]' + ip2 + ': ' + banner2)
+    print('[+]' + ip2 + ': ' + banner2.strip('\n'))
     checkVulns(banner2)
 
 banner3 = retBanner(ip3, port)
 if banner3:
-    print('[+]' + ip3 + ': ' + banner3)
+    print('[+]' + ip3 + ': ' + banner3.strip('\n'))
     checkVulns(banner3)
-
-
-def main():
-    ip1 = '192.168.95.148'
-    ip2 = '192.168.95.149'
-    ip3 = '192.168.95.150'
-    port = 21
 
 
 if __name__ == '__main__':

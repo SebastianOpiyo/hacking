@@ -14,4 +14,7 @@
   --> Can be found on the link below:
       # http://pypi.python.org/pypi/
   
-  -->   
+  -->
+
+# Python assignment:
+  --> Play around with python `Sockets` module.Have a look at the source code.   
