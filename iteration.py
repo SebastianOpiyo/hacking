@@ -28,5 +28,9 @@ def main():
             if banner:
                 print('[+] ' + ip + ': ' + banner)
 
+if len(sys.argv)==2:
+    filename=sys.argv[1]
+    print("[+] Reading vulnerabilities From: " + filename)
+
 if __name__=='__main__':
     main()
