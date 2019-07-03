@@ -1,5 +1,4 @@
 #!/usr/bin/env python3
-# Echo server program
 
 import socket
 

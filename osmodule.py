@@ -1,3 +1,5 @@
+#! usr/bin/env/ python3
+
 import socket
 import sys
 import os
@@ -13,24 +15,30 @@ def retBanner(ip, port):
     except:
         return
 
-def checkVulns(banner):
-    f = open("vuln_banners.txt", 'r')
+def checkVulns(banner, filename):
+    f = open(filename, 'r')
     for line in f.readlines():
         if line.strip('\n') in banner:
             print("[+] Server is vulnerable: "+ banner.strip('\n'))
 
 def main():
-    portList = [21,22,25,80,110,443]
-    for x in range(1, 255):
-        ip = '192.168.95.' + str(x)
-        for port in portList:
-            banner = retBanner(ip, port)
-            if banner:
-                print('[+] ' + ip + ': ' + banner)
+    if len(sys.argv)==2:
+        filename= sys.argv[1]
+        if not os.path.isfile(filename):
+            print('[-]' + filename + 'does not exist.')
+            exit(0)
+    else:
+        print('[-] Usage: '+ str(sys.argv[0]) + '<vuln filename>')
+        exit(0)
+        portList = [21,22,25,80,110,443]
+        for x in range(1, 255):
+            ip = '192.168.95.' + str(x)
+            for port in portList:
+                banner = retBanner(ip, port)
+                if banner:
+                    print('[+] ' + ip + ': ' + banner
+                    checkVulns(banner, filename)
 
-if len(sys.argv)==2:
-    filename=sys.argv[1]
-    print("[+] Reading vulnerabilities From: " + filename)
 
 if __name__=='__main__':
     main()
