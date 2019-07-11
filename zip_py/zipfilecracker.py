@@ -1,26 +1,34 @@
 #! usr/bin/env python3
-
-# the zip file for zipping and unzipping.
+import optparse
 import zipfile
-
-# To enable for similar processes to run at a time we utilize the `threading` module
 from threading import Thread 
 
-# in the function below we pass in zFile and password
-# resulting from the main() and then recursively call the function within the thread module
-def extractFile(zFile, password):
+def extractFile(zFile, password): # picks args* from the main function.
     try:
-        zFile.extractall(pwd=password)
+        zFile.extractall(pwd=password) # Doing the brute force here!
         print('[+] Found Password ' + password + '\n')
     except:
         pass
 
 def main():
+    parser = optparse.OptionParser("usage%prog "+\
+            "-f <zipfile> -d <dictionary>")
+    parser.add_option('-f', dest='zname', type='string',\
+            help='specify the zip file')
+    parser.add_option('-d', dest='dname', type='string',\
+            help='specify dictioanary file')
+    (options, args) = parser.parse_args()
+    if(options.zname == None) | (options.dname == None):
+        print(parser.usage)
+        exit(0)
+    else:
+        zname = options.zname
+        dname = options.dname
     zFile = zipfile.ZipFile("evil.zip")
     passFile = open('dictionary.txt')
     for line in passFile.readlines():
-        password = line.strip('\n')
-        # we call the thread module below 
+        password = line.strip('\n') # we brute force using each word from dict.
+        # Running multiple threads. 
         t = Thread(target=extractFile, args=(zFile, password))
         t.start()
 
