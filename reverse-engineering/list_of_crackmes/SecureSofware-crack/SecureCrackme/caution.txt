@@ -1,0 +1,27 @@
+
+
+================================  IMPORTANT!  ====================================================
+
+
+THIS IS NOT A REAL SOFTWARE. This is a crackme. DO NOT follow any instructions associated with this that
+can damage your data. You are legally allowed to RE the crackme, and you are supposed to make a .KEY file
+that can 'unlock' the software. Any mention of contacting anyone or receiving any key is FAKE. The challenge
+itself is to identify the algorithm and make a keygen.
+
+If this crackme is redistributed, this file MUST be included with it. I (the creator of the software) will
+not be responsible for any damage caused due to this software, in any form. Also, you are NOT allowed to
+redistribute it for any other purpose other than education or Reverse Engineering (RE). This crackme, 
+under normal circumstances, should not cause any damage to your device, but still, I recommend
+you take caution.
+
+If you are unable to find the files added by the software or doubtful that it may have put a malicious
+files into your device, run <app_name> -r to delete all the files created by the software. It should under
+normal circumstances, delete the directory and all the files it has created in your device.
+
+If you have any doubts, Find me as PranavAppu007 on crackmes.one discord server.
+
+
+================================  IMPORTANT!  ====================================================
+
+
+
